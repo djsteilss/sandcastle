@@ -1,5 +1,14 @@
 # @ai-hero/sandcastle
 
+## 0.14.1
+
+### Patch Changes
+
+- 7fdca8c: Fix `claudeCode()` prompts that start with a slash command (`/code-review`, a user-invoked skill) never expanding. The print command ended in `-p -`, and Claude Code passed that `-` to the model as the first token of the prompt, so the slash command was no longer at the start. The prompt is still delivered on stdin; only the trailing `-p -` is dropped (`--print` is already passed). Thanks @andrewkcorcoran!
+- 662d681: Add `"max"` to the `codex()` provider's `effort` option. It maps to `model_reasoning_effort="max"`. Thanks @joe-alphafox!
+- 8c2c568: `sandcastle init` now installs the maintained `@earendil-works/pi-coding-agent` package for the Pi agent (in the scaffolded Dockerfile and the host install hint) instead of the deprecated `@mariozechner/pi-coding-agent`. Thanks @babyspectrum!
+- e61d4fb: Fix `sandcastle init` never creating the `Sandcastle` GitHub label on Windows. The `gh label create` command ended in a Unix-only `2>/dev/null`, which `cmd.exe` rejects, and the failure was silently ignored. The redirect was redundant, since the command already runs with `stdio: "ignore"`, so it is removed. Thanks @AntonioGassner!
+
 ## 0.14.0
 
 ### Minor Changes
