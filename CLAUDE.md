@@ -30,7 +30,7 @@ The user docs are the markdown pages in `docs/guide/`. [aihero.dev/sandcastle](h
 
 ### Issue tracker
 
-Issues live as GitHub issues in `mattpocock/sandcastle`; external PRs are also a triage surface. See `docs/agents/issue-tracker.md`.
+Issues live as GitHub issues on the fork `djsteilss/sandcastle` (`origin`), never upstream `mattpocock/sandcastle` (`upstream`). External PRs are not a triage surface. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
